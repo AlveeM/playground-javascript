@@ -1,14 +1,13 @@
 function once(callback) {
-    let counter = 0;
-    let output;
-    function innerOnce(num) {
-        if (counter > 0) {
-            return output
-        } else {
-            output = callback(num);
-            counter++;
-            return output;
+    let called = false;
+    let cachedOutput;
+    function innerOnce(...args) {
+        if (!called) {
+            cachedOutput = callback(...args);
+            called = true;
+            return cachedOutput;
         }
+        return cachedOutput;
     }
     return innerOnce;
 }
