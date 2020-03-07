@@ -1,6 +1,7 @@
 function disemvowel(string) {
     // your code here...
-    let re = /[^aeiou]/gi;
+    let re = new RegExp("[^aeiou]", "gi");
+    // let re = /[^aeiou]/gi;
     result = string.match(re);
     return result.join('');
 }
