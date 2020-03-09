@@ -1,0 +1,8 @@
+.beautText {
+    color: green;
+}
+
+.beautText > img {
+    width: 500px;
+    height: auto;
+}
