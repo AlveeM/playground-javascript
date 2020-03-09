@@ -1,0 +1,12 @@
+{
+    "name": "Focus",
+    "version": "1.0",
+    "description": "Helps you focus by removing YouTube's main content wrapper and replaces it with a random image",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["./main.js"]
+        }
+    ]
+}
