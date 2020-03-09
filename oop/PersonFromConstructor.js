@@ -4,13 +4,20 @@ function PersonConstructor() {
     }
 }
 
+// function personFromConstructor(name, age) {
+//     function Person(n, a) {
+//         this.name = n;
+//         this.age = a;
+//         this.greet = new PersonConstructor().greet;
+//     }
+//     return new Person(name, age);
+// }
+
 function personFromConstructor(name, age) {
-    function Person(n, a) {
-        this.name = n;
-        this.age = a;
-        this.greet = new PersonConstructor().greet;
-    }
-    return new Person(name, age);
+    let person = new PersonConstructor();
+    person.name = name;
+    person.age = age;
+    return person;
 }
 
 const mike = personFromConstructor('Mike', 30);
