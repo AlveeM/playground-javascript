@@ -57,3 +57,12 @@ Array.prototype.concatAll = function() {
 // Use map() and concatAll() to project and flatten the movieLists into an array of video ids
 const arrVideoIds = movieLists.map(movie => movie.videos.map(video => video.id)).concatAll();
 console.log(arrVideoIds);
+
+// Array.from
+const constructArr = function() {
+    // const arr = Array.prototype.slice.call(arguments);
+    const arr = Array.from(arguments);
+    arr.push('the billiards room?');
+    return arr.join(' ');
+}
+console.log(constructArr('was', 'it', 'in'));
