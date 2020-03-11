@@ -1,10 +1,10 @@
 function censor() {
     let strStore = [];
-    return function(arg) {
-        if (arguments.length === 2) {
-            strStore.push([arguments[0], arguments[1]]);
+    return function(...args) {
+        if (args.length === 2) {
+            strStore.push([args[0], args[1]]);
         } else {
-            let str = arg;
+            let str = args[0];
             for (let strPair of strStore) {
                 let re = new RegExp(strPair[0], 'g');
                 str = str.replace(re, strPair[1]);
