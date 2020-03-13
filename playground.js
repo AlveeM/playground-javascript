@@ -6,3 +6,16 @@ function calculateBill() {
 
 const myTotal = calculateBill();
 console.log(myTotal);
+
+"use strict"
+var obj = {
+  a: 1,
+  b: {
+    c: 2,
+    d: 3
+  }
+}
+
+Object.freeze(obj);
+obj = {e: 1}
+console.log(obj);
