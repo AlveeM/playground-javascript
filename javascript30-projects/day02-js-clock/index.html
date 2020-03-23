@@ -68,6 +68,10 @@
       transition-timing-function: cubic-bezier(0.1, 2.5, 0.57, 1);
     }
 
+    .fast {
+      transition: all 0s;
+    }
+
   </style>
 
   <script>
@@ -80,6 +84,15 @@
 
       const seconds = now.getSeconds();
       const secondsDeg = ((seconds / 60) * 360) + 90; // 90 is added to offset the transform rotate
+
+      if (seconds == 0) {
+        secondHand.classList.add('fast');
+      }
+
+      if (seconds == 1) {
+        secondHand.classList.remove('fast');
+      }
+
       secondHand.style.transform = `rotate(${secondsDeg}deg)`;
 
       const mins = now.getMinutes();
